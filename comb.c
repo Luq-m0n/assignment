@@ -8,21 +8,15 @@ void sortascend(int arr[24])
 {
     for (int x = 0; x < 24; ++x)
         {
-
             for (int y = x + 1; y < 24; ++y)
             {
-
                 if (outarr[x] > outarr[y])
                 {
-
                     int a =  outarr[x];
                     outarr[x] = outarr[y];
                     outarr[y] = a;
-
                 }
-
             }
-
         }
 }
 void swap (int *x, char *y)
@@ -35,33 +29,23 @@ void swap (int *x, char *y)
 int digit_maker(int arr[4])
 {
     int sum,res;
-
     sum=0;
     for(int i=0;i<4;i++)
     {
         res=arr[i]*pow(10,(3-i));
         sum=sum+res;
     }
-
     return sum;
 }
 int permutator(int v[], int n)
 {
     int i;
-
-
-
     if (n == 1)
         {
-
-
-
             int d=digit_maker(v);
             outarr[j]=d;
             ++j;
-            //printf("\n%d\t%d\t%d",j,d,outarr[j]);
-
-    	}
+        }
     else
         {
         for (i = 0; i < n; i++)
@@ -89,15 +73,12 @@ int main()
     printf("enter the number:");
     scanf("%d",&num);
     while(num>0)
-
         {
             sum=sum+1;
             div=num%10;
             inparr[sum]=div;
             num=num/10;
-
-        }
-
+    }
     permutator(inparr,4);
     sortascend(outarr);
     while(k<24)
@@ -105,10 +86,7 @@ int main()
             printf("\n%d\t%d",k,outarr[k]);
             k++;
         }
-    int large=outarr[n-1];
-    int small=outarr[0];
-    int ans=large-small;
-    printf("\ndifference between largest and smallest \t%d-%d=%d",large,small,ans);
+    printf("\ndifference between largest and smallest \t%d-%d=%d",outarr[n-1],outarr[0],outarr[n-1]-outarr[0]);
     return(0);
 
 }
